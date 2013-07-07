@@ -32,21 +32,17 @@ class Client extends BaseClient
     }
     
     public function doRequest($request)
-    {                
-        /*exec('php '.__DIR__.'/runner.php',$content);        
-        $content = implode("\n",$content);
-        return new Response($content);*/                    
-        
+    {                                        
         $vars = array(
-        'SERVER_PROTOCOL'=>'HTTP/1.1',
-        'SCRIPT_NAME'=>'/index.php',
-        'PHP_SELF'=>'/index.php',
-        'HTTP_ACCEPT'=>'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'HTTP_USER_AGENT'=>'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36',
-        'HTTP_CONNECTION'=>'keep-alive',
-        'HTTP_CACHE_CONTROL'=>'max-age=0',
-        'HTTP_ACCEPT_ENCODING'=>'gzip,deflate,sdch',
-        'HTTP_ACCEPT_LANGUAGE'=>'en-US,en;q=0.8',
+            'SERVER_PROTOCOL'=>'HTTP/1.1',
+            'SCRIPT_NAME'=>'/index.php',
+            'PHP_SELF'=>'/index.php',
+            'HTTP_ACCEPT'=>'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'HTTP_USER_AGENT'=>'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36',
+            'HTTP_CONNECTION'=>'keep-alive',
+            'HTTP_CACHE_CONTROL'=>'max-age=0',
+            'HTTP_ACCEPT_ENCODING'=>'gzip,deflate,sdch',
+            'HTTP_ACCEPT_LANGUAGE'=>'en-US,en;q=0.8',
         );
         
         foreach($vars as $name=>$v){
