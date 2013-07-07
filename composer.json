@@ -27,7 +27,7 @@
             }
         }
     ],
-    "require-dev": {
+    "require": {
         "wordpress/wordpress": "3.5.2",
         "symfony/browser-kit": "2.3.x",
         "symfony/css-selector": "2.3.x",
