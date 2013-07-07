@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the {project_name}.
+ * This file is part of the wordpress functional test package.
  *
  * (c) Anthonius Munthi <me@itstoni.com>
  *
@@ -79,7 +79,7 @@ class Client extends BaseClient
         $GLOBALS['wp_the_query'] = & new \WP_Query();
         $GLOBALS['wp_query'] = & $GLOBALS['wp_the_query'];
         $GLOBALS['wp'] = & new \WP();
-
+        
         // clean out globals to stop them polluting wp and wp_query
         foreach ($GLOBALS['wp']->public_query_vars as $v) {
             unset($GLOBALS[$v]);
@@ -87,10 +87,11 @@ class Client extends BaseClient
         foreach ($GLOBALS['wp']->private_query_vars as $v) {
             unset($GLOBALS[$v]);
         }
-
+        
         $GLOBALS['wp']->main($parts['query']);
         
         $content = $this->getContent();
+        
         
         return new Response($content,$this->getWpResponseStatus(),$this->current_headers);
     }
@@ -124,6 +125,7 @@ class Client extends BaseClient
             $headers = array();
         }
         $this->current_headers = $headers;
+        return $headers;
     }
     
     private function getContent()

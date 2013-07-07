@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the {project_name}.
+ * This file is part of the wordpress functional test package.
  *
  * (c) Anthonius Munthi <me@itstoni.com>
  *
