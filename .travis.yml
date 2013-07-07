@@ -11,14 +11,14 @@ matrix:
         - php: 5.4
         - php: 5.5
         
-before_script:
-    # set up database
-    - mysql -e 'CREATE DATABASE wp_cli_test;' -uroot
-    - mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test.* TO "wp_cli_test"@"localhost" IDENTIFIED BY "password1"' -uroot    
+before_script:        
     - COMPOSER_ROOT_VERSION=dev-master composer selfupdate
     - COMPOSER_ROOT_VERSION=dev-master composer --prefer-source --dev install
-    - cp -R vendor/wordpress/wordpress tests/fixtures/wordpress
+    - cp -Rv vendor/wordpress/wordpress tests/fixtures/wordpress
+    # set up database
+    - mysql -e 'CREATE DATABASE wp_cli_test;' -uroot
+    - mysql -e 'GRANT ALL PRIVILEGES ON wp_cli_test.* TO "wp_cli_test"@"localhost" IDENTIFIED BY "password1"' -uroot
     - bin/restore_mysql
     
 script:
-    - phpunit -c tests --testdox --coverage-text
+    - phpunit --testdox --coverage-text
