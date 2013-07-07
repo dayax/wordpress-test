@@ -1,0 +1,37 @@
+{
+    "name": "dayax/wordpress-test",
+    "description": "WordPress Functional Test",
+    "authors": [
+        {
+            "name": "Anthonius Munthi",
+            "email": "me@itstoni.com",
+            "homepage": "http://itstoni.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "dayax": ["src/","tests/"]
+        }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package":{
+                "name": "wordpress/wordpress",
+                "version": "3.5.2",
+                "dist": {
+                    "url": "http://wordpress.org/wordpress-3.5.2.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+    "require-dev": {
+        "wordpress/wordpress": "3.5.2",
+        "symfony/browser-kit": "2.3.x",
+        "symfony/css-selector": "2.3.x",
+        "symfony/process": "2.3.x"
+    },
+    "minimum-stability": "stable"
+}

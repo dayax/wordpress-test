@@ -1,0 +1,6 @@
+<?php
+define('WORDPRESS_DIR',__DIR__.'/tests/fixtures/wordpress');
+define('ABSPATH',WORDPRESS_DIR.'/');
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/tests/wp-config.php';
+?>
