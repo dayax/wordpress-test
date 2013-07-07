@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+
 /** The name of the database for WordPress */
 define('DB_NAME', 'wp_cli_test');
 
@@ -80,6 +81,3 @@ define('WP_DEBUG', true);
 if (!defined('ABSPATH')){
     define('ABSPATH', dirname(__FILE__).'/');
 }
-
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH.'wp-settings.php');
