@@ -21,4 +21,4 @@ before_script:
     - bin/restore_mysql
     
 script:
-    - phpunit -c tests --testdox --coverage-text
+    - phpunit --testdox --coverage-text
